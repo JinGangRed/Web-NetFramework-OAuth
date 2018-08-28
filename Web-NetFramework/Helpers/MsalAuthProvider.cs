@@ -22,7 +22,7 @@ namespace Web_NetFramework.Helpers
         private static string EndPointUri = ConfigurationManager.AppSettings["EndPointURi"];
         private static string EndPointVersion = ConfigurationManager.AppSettings["EndPointVersion"];
 
-        private static string Scope = ConfigurationManager.AppSettings["Scope"];
+        private static string GraphScopes = ConfigurationManager.AppSettings["GraphScope"];
 
         private static TokenSessionCache tokenCache { get; set; }
 
@@ -38,18 +38,19 @@ namespace Web_NetFramework.Helpers
         {
             string singedInUserID = ClaimsPrincipal.Current.FindFirst(ClaimTypes.NameIdentifier).Value;
             HttpContextWrapper httpContext = new HttpContextWrapper(HttpContext.Current);
-            TokenCache userTokenCache = new TokenSessionCache(singedInUserID, httpContext).GetMsalCacheInstance();
-            ConfidentialClientApplication confidential = new ConfidentialClientApplication(
+            TokenCache userTokenCache = new TokenSessionCache(singedInUserID, httpContext)
+                .GetMsalCacheInstance();
+            ConfidentialClientApplication cca = new ConfidentialClientApplication(
                 ClientID,
                 RedirectUri,
                 new ClientCredential(ClientSecret),
-                userTokenCache,
-                null);
+                userTokenCache,null);
             
-            string[] scopes = Scope.Split(new char[] { ' ' });
+            string[] scopes = GraphScopes.Split(new char[] { ' ' });
             try
             {
-                AuthenticationResult result = await confidential.AcquireTokenSilentAsync(scopes, confidential.Users.First());
+                AuthenticationResult result = await cca.AcquireTokenSilentAsync(scopes, cca.Users.First());//confidential.Users.First());
+
                 return result.AccessToken;
             }
             catch (Exception ex)

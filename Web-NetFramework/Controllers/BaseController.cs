@@ -9,35 +9,31 @@ using Web_NetFramework.Helpers;
 
 namespace Web_NetFramework.Controllers
 {
-    public class HomeController : Controller
+    [Authorize]
+    public class BaseController : Controller
     {
-        // GET: Home
-        public ActionResult Index()
+        public BaseController()
         {
-            return View();
+            GetAccessTokenAsync().ConfigureAwait(false);
         }
+
         /// <summary>
-        /// 获取AccesstokenToken示例
+        /// 获取Accesstoken
         /// </summary>
         /// <returns></returns>
-        [Authorize]
-        public async Task<ActionResult> GetAccessToken()
+        public async Task GetAccessTokenAsync()
         {
             MsalAuthProvider authProvider = MsalAuthProvider.Instance;
             try
             {
                 var accesstoken = await authProvider.GetUserAccesstokenAsync();
                 ViewBag.AccessToken = accesstoken;
-                return View("Index");
             }
             catch (ServiceException ex)
             {
-                if (ex.Error.Message == App_Resources.Resource.Error_AuthChallengeNeeded)
-                {
-                    return new EmptyResult();
-                }
-                return RedirectToAction("Index","Error",new { message = App_Resources.Resource.Error_Message + Request.RawUrl + ": " + ex.Error.Message });
+                HttpContext.Response.RedirectToRoute("Error/Index", new { message = App_Resources.Resource.Error_Message + Request.RawUrl + ": " + ex.Error.Message });
             }
         }
+        
     }
 }

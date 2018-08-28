@@ -17,6 +17,7 @@ namespace Web_NetFramework.TokenStorage
 
         protected TokenCache Cache = new TokenCache();
 
+        
 
         public TokenSessionCache(string keyID, HttpContextBase httpContext)
         {

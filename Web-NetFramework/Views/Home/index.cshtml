@@ -2,13 +2,20 @@
     ViewBag.Title = "index";
 }
 
-<h2>AccessToken:</h2>
-<h3>@ViewBag.AccessToken</h3>
-@using (Html.BeginForm("GetAccessToken", "Home"))
-{
-    <div class="col-sm-12">
-        <div class="form-group">
-            <button class="btn btn-default" id="get-my-email-address">获取Access Token</button>
+<div style="margin-top:10px;">
+    @using (Html.BeginForm("GetAccessToken", "Home"))
+    {
+        <div class="col-sm-12">
+            <div class="form-group">
+                <button class="btn btn-default" id="get-my-email-address">获取Access Token</button>
+            </div>
         </div>
-    </div>
-}
+    }
+    @if (ViewBag.AccessToken != null)
+    {
+        <h3>AccessToken:</h3>
+        <h4>@ViewBag.AccessToken</h4>
+    }
+</div>
+
+
