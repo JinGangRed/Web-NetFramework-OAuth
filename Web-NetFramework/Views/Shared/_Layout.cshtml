@@ -22,6 +22,10 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("使用介绍", "Index", "Home")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("邮箱","Index","Email")</li>
+                    }
                 </ul>
             </div>
         </div>
