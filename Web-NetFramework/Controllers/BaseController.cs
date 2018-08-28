@@ -12,9 +12,11 @@ namespace Web_NetFramework.Controllers
     [Authorize]
     public class BaseController : Controller
     {
+        protected GraphServiceClient ServiceClient;
         public BaseController()
         {
             GetAccessTokenAsync().ConfigureAwait(false);
+            ServiceClient = GraphSdkHelper.GetGraphServiceClient();
         }
 
         /// <summary>
