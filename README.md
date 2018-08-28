@@ -11,14 +11,13 @@
 
 ## 项目介绍
 
-在使用Microsoft Graph或调用Outlook、Excel的Rest API时，需要从 Microsoft 的云标识服务 Azure Active Directory (Azure AD) 获取访问令牌。
-官方已经给出了许多关于如何获取Azure AD访问令牌的例子。这个项目是以此为基础，使用.Net MVC完成对Graph的API和Office 365。
-可以选择不同的分支获取对应的示例代码。
-更多关于GraphAPI的使用,可参考文档：[Microsoft Graph](https://developer.microsoft.com/zh-cn/graph/docs/concepts/overview)
+在使用Microsoft Graph API或调用各个产品自身Rest API时，需要从 Microsoft 的云标识服务 Azure Active Directory (Azure AD) 获取访问令牌。
+虽然官方已经给出了许多关于如何获取Azure AD访问令牌的例子,但是这个项目是完全代码实现OAuth 2.0 的验证，并且使用.Net MVC完成对Graph的API和Office 365。
+更多关于GraphAPI的使用,可参考文档：[Microsoft Graph API](https://developer.microsoft.com/zh-cn/graph/docs/concepts/overview)
 
 ## 预备条件
 
-在使用这个项目大码的时候，需要在Azure 上或 [Graph APP](https://apps.dev.microsoft.com)上注册一个应用。
+在使用这个项目代码的时候，需要在Azure 上或 [Graph API APP](https://apps.dev.microsoft.com)上注册一个应用。
 可以参考文档：[注册Microsoft应用](https://developer.microsoft.com/zh-cn/graph/docs/concepts/aspnetmvc#register-the-application)
 
 
