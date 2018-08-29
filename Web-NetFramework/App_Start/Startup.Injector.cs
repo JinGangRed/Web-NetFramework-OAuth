@@ -1,17 +1,53 @@
 ﻿using System;
+using System.Configuration;
 using System.Threading.Tasks;
+using System.Web.Mvc;
+using Autofac;
+using Autofac.Integration.Mvc;
+using Microsoft.Graph;
 using Microsoft.Owin;
 using Owin;
+using Web_NetFramework.Services.IServiceImpls;
+using Web_NetFramework.Services.IServices;
 
-[assembly: OwinStartup(typeof(Web_NetFramework.App_Start.Startup1))]
-
-namespace Web_NetFramework.App_Start
+namespace Web_NetFramework
 {
-    public class Startup1
+    /// <summary>
+    /// 用于注入服务
+    /// </summary>
+    public partial class Startup
     {
-        public void Configuration(IAppBuilder app)
+        private readonly Boolean UserGraphClient = Boolean.Parse(ConfigurationManager.AppSettings["UseGraphClient"]);
+        public void ConfigureRegistrar(IAppBuilder app)
         {
-            // 有关如何配置应用程序的详细信息，请访问 https://go.microsoft.com/fwlink/?LinkID=316888
+            
+            var container = RegisterService();
+
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+            app.UseAutofacMiddleware(container);
+
+            app.UseAutofacMvc();
+        }
+        /// <summary>
+        /// 注册服务
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <returns></returns>
+        private IContainer RegisterService()
+        {
+            var builder = new ContainerBuilder();
+            //如果使用GraphClient,则在webConfig中配置UserGraphClient属性
+            if (UserGraphClient)
+            {
+                builder.RegisterType<UserClientService>().As<IUserService>().InstancePerLifetimeScope();
+            }
+            
+
+            builder.RegisterControllers(typeof(MvcApplication).Assembly);
+
+            var container = builder.Build();
+            return container;
         }
     }
 }
