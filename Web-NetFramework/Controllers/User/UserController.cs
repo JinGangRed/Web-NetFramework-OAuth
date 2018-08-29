@@ -1,4 +1,5 @@
 ﻿using Microsoft.Graph;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,11 +19,19 @@ namespace Web_NetFramework.Controllers.User
             _userService = userService;
         }
         // GET: User
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            var str = await _userService.TestStringAsync();
-            ViewBag.Mail = str;
             return View();
+        }
+        /// <summary>
+        /// 查询我的个人信息
+        /// </summary>
+        /// <returns></returns>
+        public async Task<ActionResult> MeAsync()
+        {
+            var me = await _userService.MeAsync();
+            ViewBag.Me = JsonConvert.SerializeObject(me);
+            return View("Index");
         }
     }
 }

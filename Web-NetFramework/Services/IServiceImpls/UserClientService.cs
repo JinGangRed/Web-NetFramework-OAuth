@@ -9,6 +9,9 @@ using Web_NetFramework.Services.IServices;
 
 namespace Web_NetFramework.Services.IServiceImpls
 {
+    /// <summary>
+    /// 使用GraphClient获取用户信息
+    /// </summary>
     public class UserClientService : IUserService
     {
         private readonly GraphServiceClient _serviceClient;
@@ -16,11 +19,24 @@ namespace Web_NetFramework.Services.IServiceImpls
         {
             _serviceClient = GraphSdkHelper.GetGraphServiceClient();
         }
-
-        public async Task<string> TestStringAsync()
+        /// <summary>
+        /// 获得我的个人信息
+        /// </summary>
+        /// <returns></returns>
+        public async Task<User> MeAsync()
         {
-            User me = await _serviceClient.Me.Request().Select("mail").GetAsync();
-            return me.Mail;
+            var me = await _serviceClient.Me.Request().GetAsync();
+            return me;
+        }
+
+        public User GetUser()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DriveAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

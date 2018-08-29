@@ -1,7 +1,50 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿@*@{
+        Layout = "~/Views/Shared/_LayoutSlide.cshtml";
+    }*@
+<style>
+    .content, .info {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 10px;
+        width: 100%;
+    }
 
-<h2>@ViewBag.Mail</h2>
+    .content {
+        height: 20%;
+    }
+
+    .info {
+        height: 60%;
+    }
+    textarea {
+        overflow-x: visible;
+        overflow-y: visible;
+        width:100%;
+        height:100%;
+    }
+</style>
+<div class="content">
+    @Html.ActionLink("我的信息", "MeAsync", new { area = "" }, new { @class = "btn btn-primary" })
+</div>
+
+<div class="info">
+    <h3>得到信息:</h3>
+    @if (ViewBag.Me != null)
+    {
+        <div style="width:100%">
+            <textarea class="InfoText" cols="100" rows="20" style="width:100%">
+                @ViewBag.Me
+            </textarea>
+            <button onclick="format(@ViewBag.Me)" class="btn btn-primary">格式化</button>
+        </div>
+    }
+</div>
+
+<script>
+    function format(data) {
+        var txt = JSON.stringify(data, undefined, 4);
+        $('.InfoText').text(txt);
+    }
+    
+</script>
 
