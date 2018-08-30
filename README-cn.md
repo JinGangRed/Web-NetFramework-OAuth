@@ -1,6 +1,6 @@
 # Microsoft .Net Web OAuth
 
-### [English](https://github.com/JinGangRed/Web-NetFramework-OAuth/edit/master/README.md)
+### [English](https://github.com/JinGangRed/Web-NetFramework-OAuth/blob/master/README.md)
 
 ## 目录
 
