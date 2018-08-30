@@ -1,5 +1,7 @@
 # Microsoft .Net Web OAuth
 
+### [中文](https://github.com/JinGangRed/Web-NetFramework-OAuth/edit/master/README-cn.md)
+
 ## 目录
 
 * [项目介绍](#项目介绍)
