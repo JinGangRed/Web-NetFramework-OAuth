@@ -4,12 +4,12 @@
 
 ## Catalog
 
-* [Introduction](#Introduction)
-* [Prerequisite](#Prerequisite)
-* [Configuration](#Configuration)
-* [Structure](#Structure)
-* [Resources](#Resources)
-* [Feedback](#Feedback)
+* [Introduction](#introduction)
+* [Prerequisite](#prerequisite)
+* [Configuration](#configuration)
+* [Structure](#structure)
+* [Resources](#resources)
+* [Feedback](#feedback)
 
 ## Introduction
 
