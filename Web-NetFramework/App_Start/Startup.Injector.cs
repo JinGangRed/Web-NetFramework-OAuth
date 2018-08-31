@@ -43,6 +43,12 @@ namespace Web_NetFramework
                 builder.RegisterType<UserClientService>().As<IUserService>().InstancePerLifetimeScope();
                 builder.RegisterType<EmailClientService>().As<IEmailService>().InstancePerLifetimeScope();
             }
+            else
+            {
+                //注入REST实现的服务
+                builder.RegisterType<UserRestService>().As<IUserService>().InstancePerLifetimeScope();
+
+            }
             
 
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
