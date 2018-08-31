@@ -58,53 +58,53 @@ After download the project, you should create an Azure.OAuth.config under your r
 
 ```
 .
-├── App_Data                        项目数据
-├── App_Resources                   项目资源文件
-├── App_Start                       项目启动文件
-│   ├── RouteConfig.cs              路由配置
-│   ├── Startup.Auth.cs             系统认证
-│   ├── Startup.Injector.cs         服务注册
-├── Content                         项目资源文件，CSS、SCSS
-│   ├── bootstrap.css               bootstrap样式
-│   ├── bootstrap.min.css           bootstrap样式
-│   ├── Site.css                    全局样式
-├── Controllers                     项目控制器
-│   ├── User                        和用户相关的控制器
-│       ├── UserController.cs       用户控制器
-│   ├── Email                       邮件相关的控制器
-│       ├── EmailController.cs      邮件控制器
-│   ├── BaseController.cs           基础控制器，所有需要登陆认证的控制器建议继承该类
-│   ├── ErrorController.cs          系统错误控制器
-│   ├── HomeController.cs           默认控制器
-├── fonts                           项目字体文件
-├── Helpers                         项目帮助类
-│   ├── GraphSdkHelper.cs           Graph API的帮助类
-│   ├── IAuthProvider.cs            定义认证服务的接口
-│   ├── MsalAuthProvider.cs         认证服务的实现类，继承自IAuthProvider
-├── Models                          自定义模型类
-├── Scripts                         项目JS文件
-├── Services                        服务类
-│   ├── IServiceImpls               服务接口实现类
-│       ├── UserClientService.cs    使用Graph Client调用用户服务
-│       ├── UserRestService.cs      使用REST API调用用户服务
-│   ├── IServices                   服务接口
-│       ├── IUserService.cs         用户服务接口定义
-├── TokenStorage                    项目Token缓存类
-│   ├── TokenSessionCache.cs        使用Session缓存Token
-├── Views                           项目页面
-├── Azure.OAuth.config              Azure AD 配置文件
-├── Global.asax                     启动文件
-├── packages.config                 项目包配置
-├── Startup.cs                      Owin启动文件
-├── Web.config                      系统配置文件
+├── App_Data                        Data
+├── App_Resources                   Resources
+├── App_Start                       Startup
+│   ├── RouteConfig.cs              RouteConfig
+│   ├── Startup.Auth.cs             Authentication
+│   ├── Startup.Injector.cs         Service register
+├── Content                         Assets folders
+│   ├── bootstrap.css               bootstrap
+│   ├── bootstrap.min.css           bootstrap
+│   ├── Site.css                    css
+├── Controllers                     Controller folder
+│   ├── User                        User Controller folder
+│       ├── UserController.cs       User Controller
+│   ├── Email                       Email Controller folder
+│       ├── EmailController.cs      Email Controller
+│   ├── BaseController.cs           Basic Controller, include login authentication function
+│   ├── ErrorController.cs          Error Controller
+│   ├── HomeController.cs           Default Controller
+├── fonts                           Fonts folder
+├── Helpers                         Helpers folder
+│   ├── GraphSdkHelper.cs           Graph API helper
+│   ├── IAuthProvider.cs            Custom Authentication Interface
+│   ├── MsalAuthProvider.cs         Authentication service class, inherit from IAuthProvider
+├── Models                          Models
+├── Scripts                         JS folder
+├── Services                        Services folders
+│   ├── IServiceImpls               Service classes
+│       ├── UserClientService.cs    Graph Client Service 
+│       ├── UserRestService.cs      Rest API Service
+│   ├── IServices                   Service interface folder
+│       ├── IUserService.cs         Service interface 
+├── TokenStorage                    Token folder
+│   ├── TokenSessionCache.cs        Token cache
+├── Views                           Views
+├── Azure.OAuth.config              Azure AD config
+├── Global.asax                     Startup
+├── packages.config                 packages config
+├── Startup.cs                      Owin Startup
+├── Web.config                      Web config
 .
 
 ```
 
 ## Resources
 
-* [Microsoft Graph 文档](https://developer.microsoft.com/en-us/graph/docs/concepts/overview)
-* [Azure AD 认证](https://docs.microsoft.com/en-us/azure/active-directory/develop/azure-ad-developers-guide)
+* [Microsoft Graph docs](https://developer.microsoft.com/en-us/graph/docs/concepts/overview)
+* [Azure AD Authentication](https://docs.microsoft.com/en-us/azure/active-directory/develop/azure-ad-developers-guide)
 
 
 
