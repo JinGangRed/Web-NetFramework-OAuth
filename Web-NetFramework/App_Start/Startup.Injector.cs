@@ -41,6 +41,7 @@ namespace Web_NetFramework
             if (UserGraphClient)
             {
                 builder.RegisterType<UserClientService>().As<IUserService>().InstancePerLifetimeScope();
+                builder.RegisterType<EmailClientService>().As<IEmailService>().InstancePerLifetimeScope();
             }
             
 

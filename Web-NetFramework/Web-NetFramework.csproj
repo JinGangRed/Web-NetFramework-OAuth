@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\Startup.Injector.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\Email\EmailController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\User\UserController.cs" />
@@ -207,7 +208,9 @@
     <Compile Include="Helpers\IAuthProvider.cs" />
     <Compile Include="Helpers\MsalAuthProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IServiceImpls\EmailClientService.cs" />
     <Compile Include="Services\IServiceImpls\UserClientService.cs" />
+    <Compile Include="Services\IServices\IEmailService.cs" />
     <Compile Include="Services\IServices\IUserService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TokenStorage\TokenSessionCache.cs" />
@@ -225,6 +228,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutSlide.cshtml" />
+    <Content Include="Views\Email\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

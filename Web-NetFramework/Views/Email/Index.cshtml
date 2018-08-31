@@ -1,0 +1,61 @@
+﻿@using Microsoft.Graph
+@{
+    ViewBag.Title = "Index";
+    var messages = ViewBag.Emails as IList<Message>;
+}
+<style>
+
+    .content {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 10px;
+        width: 100%;
+    }
+</style>
+<div class="content">
+    @Html.ActionLink("我的邮件", "MeAsync", new { area = "" }, new { @class = "btn btn-primary" })
+</div>
+
+
+@if (messages != null && messages.Count > 0)
+{
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Sender
+                </th>
+                <th>
+                    Receiver
+                </th>
+                <th>
+                    Subject
+                </th>
+                <th>
+                    parentFolderId
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in messages)
+            {
+            <tr>
+                <td>
+                    @item.Sender.EmailAddress.Name: @item.Sender.EmailAddress.Address
+                </td>
+                <td>
+                    @item.ToRecipients.First().EmailAddress.Address
+                </td>
+                <td>
+                    @item.Subject
+                </td>
+                <td>
+                    @item.ParentFolderId
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}
