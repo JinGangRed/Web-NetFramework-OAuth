@@ -9,6 +9,9 @@ using Web_NetFramework.Helpers;
 
 namespace Web_NetFramework.Controllers
 {
+    /// <summary>
+    /// 所有需要认证的控制器的基类,不要修改 By King 
+    /// </summary>
     [Authorize]
     public class BaseController : Controller
     {
