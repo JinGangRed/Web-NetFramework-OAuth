@@ -1,6 +1,6 @@
 # Microsoft .Net Web OAuth
 
-### [中文](https://github.com/JinGangRed/Web-NetFramework-OAuth/blob/master/README-cn.md)
+### [中文Readme](https://github.com/JinGangRed/Web-NetFramework-OAuth/blob/master/README-cn.md)
 
 ## Catalog
 
@@ -19,12 +19,13 @@ For more information about GraphAPI user guide, please read [Microsoft Graph API
 ## Prerequisite
 
 Before you start using this project, you should register an app on Azure or [Graph API APP](https://apps.dev.microsoft.com)
-User guide: [Register Microsoft Application](https://developer.microsoft.com/zh-cn/graph/docs/concepts/aspnetmvc#register-the-application)
+User guide: [Register Microsoft Application](https://developer.microsoft.com/en-us/graph/docs/concepts/aspnetmvc#register-the-application)
 
 
 ## Configuration
-在注册应用时，你需要保存应用的APPID(Client ID),APPSecret(Client Secret),并且将该平台上的RedirectUri修改为你项目运行的地址如http://localhost:54190
-下载完项目之后，你需要在项目的根目录文件下，创建一个Azure.OAuth.config文件，并将以下代码加入到该文件中
+
+When you register the application, you should save your AppID(Client Id) and AppSecret(Client Secret). Please also update your RedirectUri to your project's address. E.g. http://localhost:54190
+After download the project, you should create an Azure.OAuth.config under your root folder and add code below inside the config file.
 
 ```
 <appSettings>
