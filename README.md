@@ -13,14 +13,13 @@
 
 ## Introduction
 
-在使用Microsoft Graph API或调用各个产品自身Rest API时，需要从 Microsoft 的云标识服务 Azure Active Directory (Azure AD) 获取访问令牌。
-虽然官方已经给出了许多关于如何获取Azure AD访问令牌的例子,但是这个项目是完全代码实现OAuth 2.0 的验证，并且使用.Net MVC完成对Graph的API和Office 365。
-更多关于GraphAPI的使用,可参考文档：[Microsoft Graph API](https://developer.microsoft.com/zh-cn/graph/docs/concepts/overview)
+When we using Microsoft Graph API or using Office 365 products' Rest API, we have to identified by Azure Active Director (Azure AD) and retrieve access token. Although there are some official ways to retrieve published by Microsoft, this project use code to achieve OAuth 2.0 authentication. This project used ASP.NET MVC to call Graph API and Office 365 projects' rest API.
+For more information about GraphAPI user guide, please read [Microsoft Graph API](https://developer.microsoft.com/zh-cn/graph/docs/concepts/overview)
 
 ## Prerequisite
 
-在使用这个项目代码的时候，需要在Azure 上或 [Graph API APP](https://apps.dev.microsoft.com)上注册一个应用。
-可以参考文档：[注册Microsoft应用](https://developer.microsoft.com/zh-cn/graph/docs/concepts/aspnetmvc#register-the-application)
+Before you start using this project, you should register an app on Azure or [Graph API APP](https://apps.dev.microsoft.com)
+User guide: [Register Microsoft Application](https://developer.microsoft.com/zh-cn/graph/docs/concepts/aspnetmvc#register-the-application)
 
 
 ## Configuration
