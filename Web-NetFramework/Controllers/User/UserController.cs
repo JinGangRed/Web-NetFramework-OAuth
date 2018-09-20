@@ -27,11 +27,34 @@ namespace Web_NetFramework.Controllers.User
         /// 查询我的个人信息
         /// </summary>
         /// <returns></returns>
-        public async Task<ActionResult> MeAsync()
+        public async Task<JsonResult> MeAsync()
         {
-            var me = await _userService.MeAsync();
-            ViewBag.Me = JsonConvert.SerializeObject(me);
-            return View("Index");
+            try
+            {
+                var me = await _userService.MeAsync();
+                return Json(me,JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.StackTrace,JsonRequestBehavior.AllowGet);
+
+            }
+        }
+        /// <summary>
+        /// 所有用户信息
+        /// </summary>
+        /// <returns></returns>
+        public async Task<JsonResult> UsersAsync()
+        {
+            try
+            {
+                var users = await _userService.UsersAsync();
+                return Json(users,JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex, JsonRequestBehavior.AllowGet);
+            }
         }
     }
 }

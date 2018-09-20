@@ -29,7 +29,7 @@ namespace Web_NetFramework.Services.IServiceImpls
             return me;
         }
 
-        public User GetUser()
+        public User GetUser(string id)
         {
             throw new NotImplementedException();
         }
@@ -37,6 +37,26 @@ namespace Web_NetFramework.Services.IServiceImpls
         public Task DriveAsync()
         {
             throw new NotImplementedException();
+        }
+        /// <summary>
+        /// 获得所有用户
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<User>> UsersAsync()
+        {
+            var users = await _serviceClient.Users.Request().GetAsync();
+            //#region Case Handle
+
+            //var users = await _serviceClient.Users.Request()
+            //    .Select("displayName,mobilePhone,mail,photo,department,jobTitle,mailNickname")
+            //    .Top(20).GetAsync();
+
+            //#endregion
+
+
+
+
+            return users.ToList();
         }
     }
 }

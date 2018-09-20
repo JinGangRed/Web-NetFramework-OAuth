@@ -33,7 +33,7 @@
         </div>
     </nav>
 
-    <div class="container-fluid body-content">
+    @*<div class="container-fluid body-content">
         <div class="row" style="height:100%;">
             <div class="col-lg-2 col-md-2 col-xs-2 col-sm-2" style="height:100%;">
                 @RenderSection("Slide", false)
@@ -42,16 +42,22 @@
                 @RenderBody()
             </div>
         </div>
+    </div>*@
+    <div class="container-fluid body-content">
+        @RenderBody()
     </div>
-    <hr/>
+    <hr />
     <div class="navbar navbar-default navbar-fixed-bottom">
         <footer class="container">
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-    
+
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/jquery-service.js"></script>
+
 </body>
 </html>

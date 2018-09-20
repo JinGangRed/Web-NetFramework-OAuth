@@ -13,7 +13,7 @@
     }
 </style>
 <div class="content">
-    @Html.ActionLink("我的邮件", "MeAsync", new { area = "" }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("My Email", "MeAsync", new { area = "" }, new { @class = "btn btn-primary" })
 </div>
 
 
@@ -35,6 +35,9 @@
                 <th>
                     parentFolderId
                 </th>
+                <th>
+                    Operation
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -53,9 +56,13 @@
                 <td>
                     @item.ParentFolderId
                 </td>
+                <td>
+                    <button class="btn btn-primary" onclick="ajaxHelper.sendMail('@item.Sender.EmailAddress.Address');">Send Email</button>
+                </td>
             </tr>
             }
         </tbody>
     </table>
 </div>
 }
+

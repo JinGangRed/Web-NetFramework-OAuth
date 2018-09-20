@@ -26,7 +26,7 @@ namespace Web_NetFramework.Services.IServiceImpls
             throw new NotImplementedException();
         }
 
-        public User GetUser()
+        public User GetUser(string id)
         {
             throw new NotImplementedException();
         }
@@ -40,6 +40,11 @@ namespace Web_NetFramework.Services.IServiceImpls
 
             return user;
 
+        }
+
+        public Task<List<User>> UsersAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -16,7 +16,13 @@ namespace Web_NetFramework.Services.IServices
         /// 获得用户信息
         /// </summary>
         /// <returns></returns>
-        User GetUser();
+        User GetUser(string id);
+        /// <summary>
+        /// 获得所有用户
+        /// </summary>
+        /// <returns></returns>
+        Task<List<User>> UsersAsync();
+
         /// <summary>
         /// 获得我的个人信息11
         /// </summary>
