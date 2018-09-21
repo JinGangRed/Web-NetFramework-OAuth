@@ -1,9 +1,19 @@
-﻿; (function () {
+﻿/**
+ * This JavaScript Library is for requesting the common JSON result.
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * */
+; (function () {
     if (window.$ == undefined) {
         console.error("please add the jquery first");
     }
+
     /**
-     * Send Email
+     * 发送邮件
      * @param {any} toAddress
      */
     var _sendMail = function (toAddress) {
@@ -23,10 +33,22 @@
             return data;
         })
     }
+
+    var _myMail = function () {
+        $.ajax({
+            url: '/Email/MeAsync',
+        }).then(data => {
+            console.log(data);
+            _showData(data);
+            return data;
+        })
+    }
     /**
      * 所有用户
+     * @param show If false, it will not show the result in the element with '.info' class
      * */
     var _users = function () {
+        var show = true;
         $.ajax({
             url: '/User/UsersAsync',
         }).then(data => {
@@ -53,11 +75,12 @@
      */
     var _showData = function (data) {
         if ($('.info')) {
-            $('.info').text(JSON.stringify(data));
+            $('.info').text(JSON.stringify(data,2));
         }
     }
     var _ajaxHelper = {
         sendMail: _sendMail,
+        myMail:_myMail,
         users: _users,
         me: _meInfo,
     };

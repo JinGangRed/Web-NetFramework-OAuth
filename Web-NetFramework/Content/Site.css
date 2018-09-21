@@ -10,30 +10,22 @@ body {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-right: 15px;
+    padding:15px;
     width:100%;
     height:100%;
+}
+.content, .info {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    width: 100%;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.content {
+    height: 20%;
 }
-.slide{
-    float:left;
-    padding-left:15px;
-    padding-top:15px;
-    padding-bottom:15px;
-    color:#fff;
-    border:1px solid blue;
-    width:100%;
-    height:100%;
-    background:#808080;
-}
-.group-item{
-    border-bottom:1px solid #ddd;
-    background-color:#808080;
+
+.info {
+    height: 60%;
 }
 

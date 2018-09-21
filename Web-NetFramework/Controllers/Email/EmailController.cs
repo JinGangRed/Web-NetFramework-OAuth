@@ -20,12 +20,22 @@ namespace Web_NetFramework.Controllers.Email
         {
             _emailService = emailService;
         }
-        // GET: Email
-        public async Task<ActionResult> MeAsync()
+        public ActionResult Index()
         {
-            var messages = await _emailService.MeAsync();
-            ViewBag.Emails = messages;
-            return View("Index");
+            return View();
+        }
+        // GET: Email
+        public async Task<JsonResult> MeAsync()
+        {
+            try
+            {
+                var messages = await _emailService.MeAsync();
+                return Json(messages, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.StackTrace, JsonRequestBehavior.AllowGet);
+            }
         }
         // Get: sendMail
         public async Task<JsonResult> SendAsync(string toAddress)

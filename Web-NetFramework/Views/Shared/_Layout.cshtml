@@ -21,28 +21,16 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-
                     @if (Request.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("邮箱", "MeAsync", "Email")</li>
-                        <li>@Html.ActionLink("用户", "Index", "User")</li>
+                        <li>@Html.ActionLink("Email", "Index", "Email")</li>
+                        <li>@Html.ActionLink("User", "Index", "User")</li>
                     }
-                    <li>@Html.ActionLink("使用介绍", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Use Guide", "Index", "Home")</li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    @*<div class="container-fluid body-content">
-        <div class="row" style="height:100%;">
-            <div class="col-lg-2 col-md-2 col-xs-2 col-sm-2" style="height:100%;">
-                @RenderSection("Slide", false)
-            </div>
-            <div class="col-lg-9 col-md-9 col-xs-9 col-sm-9 " style="height:100%;">
-                @RenderBody()
-            </div>
-        </div>
-    </div>*@
     <div class="container-fluid body-content">
         @RenderBody()
     </div>

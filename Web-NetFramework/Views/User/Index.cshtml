@@ -1,35 +1,17 @@
 ﻿@*@{
         Layout = "~/Views/Shared/_LayoutSlide.cshtml";
     }*@
-<style>
-    .content, .info {
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        margin: 10px;
-        width: 100%;
-    }
-
-    .content {
-        height: 20%;
-    }
-
-    .info {
-        height: 60%;
-    }
-    textarea {
-        overflow-x: visible;
-        overflow-y: visible;
-        width:100%;
-        height:100%;
-    }
-</style>
 <div class="content">
-    <button class="btn btn-primary" onclick="ajaxHelper.me();">我的信息</button>
-    <button class="btn btn-primary" onclick="ajaxHelper.users();">所有用户</button>
+    <button class="btn btn-primary" onclick="ajaxHelper.me();">My Profile</button>
+    <button class="btn btn-primary" onclick="getUsers();">All User</button>
 </div>
 
 <div class="info">
-    
 </div>
+<script>
+    function getUsers() {
+        var user = ajaxHelper.users();
 
+    }
+</script>
 
