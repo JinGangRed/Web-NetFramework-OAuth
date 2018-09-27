@@ -46,17 +46,21 @@ namespace Web_NetFramework.Services.IServiceImpls
         {
             var users = await _serviceClient.Users.Request().GetAsync();
             //#region Case Handle
-
             //var users = await _serviceClient.Users.Request()
             //    .Select("displayName,mobilePhone,mail,photo,department,jobTitle,mailNickname")
             //    .Top(20).GetAsync();
 
             //#endregion
-
-
-
-
             return users.ToList();
+        }
+        /// <summary>
+        /// 获得我的照片
+        /// </summary>
+        /// <returns></returns>
+        public async Task<ProfilePhoto> PhotoAsync()
+        {
+            var photo = await _serviceClient.Me.Photo.Request().GetAsync();
+            return photo;
         }
     }
 }

@@ -42,6 +42,11 @@ namespace Web_NetFramework.Services.IServiceImpls
 
         }
 
+        public Task<ProfilePhoto> PhotoAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<List<User>> UsersAsync()
         {
             throw new NotImplementedException();

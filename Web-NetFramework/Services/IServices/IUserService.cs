@@ -34,5 +34,11 @@ namespace Web_NetFramework.Services.IServices
         /// </summary>
         /// <returns></returns>
         Task DriveAsync();
+
+        /// <summary>
+        /// 获得我的照片
+        /// </summary>
+        /// <returns></returns>
+        Task<ProfilePhoto> PhotoAsync();
     }
 }

@@ -33,7 +33,9 @@
             return data;
         })
     }
-
+    /**
+     * 我的邮件
+     * */
     var _myMail = function () {
         $.ajax({
             url: '/Email/MeAsync',
@@ -58,11 +60,23 @@
         })
     }
     /**
-     * 显示我的信息
+     * 我的信息
      * */
     var _meInfo = function () {
         $.ajax({
             url: '/User/MeAsync',
+        }).then(data => {
+            console.log(data);
+            _showData(data);
+            return data;
+        })
+    }
+    /**
+     * 我的照片
+     * */
+    var _mePhoto = function () {
+        $.ajax({
+            url: '/Photo/MeAsync',
         }).then(data => {
             console.log(data);
             _showData(data);
@@ -82,7 +96,8 @@
         sendMail: _sendMail,
         myMail:_myMail,
         users: _users,
-        me: _meInfo,
+        myInfo: _meInfo,
+        myPhoto: _mePhoto
     };
 
 
