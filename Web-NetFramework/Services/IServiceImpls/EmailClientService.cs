@@ -23,7 +23,7 @@ namespace Web_NetFramework.Services.IServiceImpls
         public async Task<IList<Message>> MeAsync(int pagesize = 10)
         {
             var collectionMessagePage = await _serviceClient.Me.Messages.Request().Top(20).GetAsync();
-            var  count = collectionMessagePage.Count; //The default page size for this request is 10 messages.
+            var count = collectionMessagePage.Count; //The default page size for this request is 10 messages.
             return collectionMessagePage.CurrentPage;
         }
         /// <summary>

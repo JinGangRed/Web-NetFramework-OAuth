@@ -203,10 +203,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\Startup.Injector.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\DriveItems\DriveItemsController.cs" />
     <Compile Include="Controllers\Email\EmailController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Plan\PlanController.cs" />
     <Compile Include="Controllers\User\PhotoController.cs" />
     <Compile Include="Controllers\User\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -220,11 +222,15 @@
     <Compile Include="Services\IServiceImpls\DriveClientService.cs" />
     <Compile Include="Services\IServiceImpls\DriveItemsClientService.cs" />
     <Compile Include="Services\IServiceImpls\EmailClientService.cs" />
+    <Compile Include="Services\IServiceImpls\CalendarClientService.cs" />
+    <Compile Include="Services\IServiceImpls\PlanClientService.cs" />
     <Compile Include="Services\IServiceImpls\UserClientService.cs" />
     <Compile Include="Services\IServiceImpls\UserRestService.cs" />
+    <Compile Include="Services\IServices\ICalendarService.cs" />
     <Compile Include="Services\IServices\IDriveItemsService.cs" />
     <Compile Include="Services\IServices\IDriveService.cs" />
     <Compile Include="Services\IServices\IEmailService.cs" />
+    <Compile Include="Services\IServices\IPlanService.cs" />
     <Compile Include="Services\IServices\IUserService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TokenStorage\TokenSessionCache.cs" />
@@ -242,6 +248,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Email\Index.cshtml" />
+    <Content Include="Views\Plan\Index.cshtml" />
+    <Content Include="Views\Calendar\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

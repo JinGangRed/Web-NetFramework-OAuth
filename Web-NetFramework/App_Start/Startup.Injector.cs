@@ -43,6 +43,8 @@ namespace Web_NetFramework
                 builder.RegisterType<UserClientService>().As<IUserService>().InstancePerLifetimeScope();
                 builder.RegisterType<EmailClientService>().As<IEmailService>().InstancePerLifetimeScope();
                 builder.RegisterType<DriveItemsClientService>().As<IDriveItemsService>().InstancePerLifetimeScope();
+                builder.RegisterType<PlanClientService>().As<IPlanService>().InstancePerLifetimeScope();
+                builder.RegisterType<CalendarClientService>().As<ICalendarService>().InstancePerLifetimeScope();
             }
             else
             {

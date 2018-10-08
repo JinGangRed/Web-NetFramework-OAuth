@@ -84,6 +84,44 @@
         })
     }
     /**
+     * 列出计划
+     * */
+    var _listPlan = function () {
+        $.ajax({
+            url: '/Plan/PlansAsync',
+        }).then(data => {
+            console.log(data);
+            _showData(data);
+            return data;
+        })
+    }
+    /**
+     * 获得特定日历的事件
+     * */
+    var _events = function () {
+        $.ajax({
+            url: '/Calendar/EventsAsync',
+        }).then(data => {
+            console.log(data);
+            _showData(data);
+            return data;
+        })
+    }
+    /**
+     * 获得特定日历
+     * */
+    var _calendar = function () {
+        $.ajax({
+            url: '/Calendar/CalendarAsync',
+        }).then(data => {
+            console.log(data);
+            _showData(data);
+            return data;
+        })
+    }
+
+
+    /**
      * 显示数据
      * @param {any} data
      */
@@ -97,7 +135,10 @@
         myMail:_myMail,
         users: _users,
         myInfo: _meInfo,
-        myPhoto: _mePhoto
+        myPhoto: _mePhoto,
+        listPlan: _listPlan,
+        events: _events,
+        calendar:_calendar
     };
 
 
