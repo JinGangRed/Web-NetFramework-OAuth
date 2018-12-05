@@ -24,5 +24,9 @@ namespace Web_NetFramework.Services.IServices
         /// <param name="toaddress">收件人</param>
         /// <returns></returns>
         Task SendAsync(Message message);
+
+
+        Task<IMailFolderMessageRulesCollectionPage> MessageRulesAsync(string userId);
+
     }
 }

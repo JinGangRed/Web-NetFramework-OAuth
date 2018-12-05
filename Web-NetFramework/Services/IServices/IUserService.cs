@@ -40,5 +40,11 @@ namespace Web_NetFramework.Services.IServices
         /// </summary>
         /// <returns></returns>
         Task<ProfilePhoto> PhotoAsync();
+
+        /// <summary>
+        /// 获得联系人列表
+        /// </summary>
+        /// <returns></returns>
+        Task<IUserContactsCollectionPage> ContactsAsync();
     }
 }

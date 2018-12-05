@@ -21,6 +21,12 @@ namespace Web_NetFramework.Services.IServiceImpls
         {
             
         }
+
+        public Task<IUserContactsCollectionPage> ContactsAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task DriveAsync()
         {
             throw new NotImplementedException();
@@ -33,7 +39,9 @@ namespace Web_NetFramework.Services.IServiceImpls
 
         public async Task<User> MeAsync()
         {
+            
             var url = RestAPIUrl.BaseUrl + RestAPIUrl.Version_1 + RestAPIUrl.Me;
+
             var userInfo = await RestHelper.RestServiceClient(url, MsalAuthProvider.Instance).GetAsync();
 
             var user = JsonConvert.DeserializeObject<User>(userInfo);

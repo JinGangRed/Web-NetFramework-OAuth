@@ -118,12 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BaseUrl" xml:space="preserve">
-    <value>Https://graph.microsoft.com/</value>
+    <value>https://graph.microsoft.com/</value>
     <comment>Microsoft Graph Base Url</comment>
   </data>
   <data name="Me" xml:space="preserve">
     <value>/me</value>
     <comment>Get Me information</comment>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>/messages</value>
+    <comment>Get the messages</comment>
   </data>
   <data name="Version_1" xml:space="preserve">
     <value>v1.0</value>

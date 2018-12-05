@@ -13,5 +13,7 @@ namespace Web_NetFramework.Services.IServices
 
 
         Task<Calendar> CalendarAsync(string calendarId);
+
+        Task<IUserCalendarsCollectionPage> MeAsync();
     }
 }

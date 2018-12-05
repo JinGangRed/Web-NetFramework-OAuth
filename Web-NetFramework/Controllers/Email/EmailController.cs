@@ -75,5 +75,13 @@ namespace Web_NetFramework.Controllers.Email
             }
 
         }
+
+
+        public async Task<JsonResult> MessageRulesAsync()
+        {
+            var userId = "dd7a2c7e-07d1-469b-b980-9563e417047c";
+            var result = await _emailService.MessageRulesAsync(userId);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
     }
 }

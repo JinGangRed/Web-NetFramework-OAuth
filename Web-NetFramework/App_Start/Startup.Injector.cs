@@ -50,6 +50,7 @@ namespace Web_NetFramework
             {
                 //注入REST实现的服务
                 builder.RegisterType<UserRestService>().As<IUserService>().InstancePerLifetimeScope();
+                builder.RegisterType<EmailRestService>().As<IEmailService>().InstancePerLifetimeScope();
 
             }
             

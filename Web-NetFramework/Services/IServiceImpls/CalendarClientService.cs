@@ -24,6 +24,7 @@ namespace Web_NetFramework.Services.IServiceImpls
         public async Task<Calendar> CalendarAsync(string calendarId)
         {
             var calendar = await _serviceClient.Me.Calendars[calendarId].Request().GetAsync();
+            
             return calendar;
         }
 
@@ -36,6 +37,12 @@ namespace Web_NetFramework.Services.IServiceImpls
         {
             var events = await _serviceClient.Me.Calendars[calendarId].Events.Request().GetAsync();
             return events.CurrentPage;
+        }
+
+        public Task<IUserCalendarsCollectionPage> MeAsync()
+        {
+            var result = _serviceClient.Me.Calendars.Request().GetAsync();
+            return result;
         }
     }
 }

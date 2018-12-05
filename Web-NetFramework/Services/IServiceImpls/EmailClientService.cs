@@ -6,7 +6,6 @@ using System.Web;
 using Microsoft.Graph;
 using Web_NetFramework.Helpers;
 using Web_NetFramework.Services.IServices;
-
 namespace Web_NetFramework.Services.IServiceImpls
 {
     public class EmailClientService : IEmailService
@@ -22,10 +21,25 @@ namespace Web_NetFramework.Services.IServiceImpls
         /// <returns></returns>
         public async Task<IList<Message>> MeAsync(int pagesize = 10)
         {
-            var collectionMessagePage = await _serviceClient.Me.Messages.Request().Top(20).GetAsync();
+
+            var collectionMessagePage = await _serviceClient.Me.Messages.Request().Top(pagesize).GetAsync();
+
+
             var count = collectionMessagePage.Count; //The default page size for this request is 10 messages.
             return collectionMessagePage.CurrentPage;
         }
+        /// <summary>
+        /// 获得收件规则
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public Task<IMailFolderMessageRulesCollectionPage> MessageRulesAsync(string userId)
+        {
+            var result = _serviceClient.Users[userId].MailFolders.Inbox.MessageRules.Request().GetAsync();
+            return result;
+
+        }
+
         /// <summary>
         /// 发送邮件,User = Me
         /// </summary>

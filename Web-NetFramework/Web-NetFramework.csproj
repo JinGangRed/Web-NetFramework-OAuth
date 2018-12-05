@@ -223,6 +223,7 @@
     <Compile Include="Services\IServiceImpls\DriveItemsClientService.cs" />
     <Compile Include="Services\IServiceImpls\EmailClientService.cs" />
     <Compile Include="Services\IServiceImpls\CalendarClientService.cs" />
+    <Compile Include="Services\IServiceImpls\EmailRestService.cs" />
     <Compile Include="Services\IServiceImpls\PlanClientService.cs" />
     <Compile Include="Services\IServiceImpls\UserClientService.cs" />
     <Compile Include="Services\IServiceImpls\UserRestService.cs" />
@@ -230,6 +231,7 @@
     <Compile Include="Services\IServices\IDriveItemsService.cs" />
     <Compile Include="Services\IServices\IDriveService.cs" />
     <Compile Include="Services\IServices\IEmailService.cs" />
+    <Compile Include="Services\IServices\IGroupService.cs" />
     <Compile Include="Services\IServices\IPlanService.cs" />
     <Compile Include="Services\IServices\IUserService.cs" />
     <Compile Include="Startup.cs" />
